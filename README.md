@@ -9,7 +9,7 @@ $ python dupknock.py directory_containing_files [exts]
 ```
 
 ## Example
-To search within text(txt) files only:
+To search within text (txt) files only:
 ```bash
 $ python dupknock.py subdomains
 ```
