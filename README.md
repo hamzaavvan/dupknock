@@ -1,6 +1,9 @@
 # dupknock
 Python tool to help you knockout duplicate entries from multiple files and generate the final output
 
+![DupKnock - Python](https://github.com/hamzaavvan/dupknock/blob/master/ss/s1.gif?raw=true)
+
+
 **Required:** Python 3.5 or above
 
 ## Usage
