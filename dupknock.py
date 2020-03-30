@@ -4,7 +4,8 @@ import sys
 ext = 'txt'
 dname = sys.argv[1]
 
-if len(sys.argv) ==2: ext = sys.argv[2];
+if len(sys.argv) ==3: 
+    ext = sys.argv[2]
 
 subdomains=[]
 
@@ -38,6 +39,6 @@ def main(basepath, temp=[], ext='txt'):
 main(dname, subdomains, ext)
 
 print("[-] Writing to final.txt")
-with open('./finals.txt', 'w+') as fh
+with open('./finals.txt', 'w+') as fh:
     for d in subdomains:
         fh.write(d+"\n")
