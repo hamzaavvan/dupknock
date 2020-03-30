@@ -1,7 +1,11 @@
 import os
 import sys
 
+ext = 'txt'
 dname = sys.argv[1]
+
+if len(sys.argv) ==2: ext = sys.argv[2];
+
 subdomains=[]
 
 # List all subdirectories using scandir()
@@ -31,11 +35,9 @@ def main(basepath, temp=[], ext='txt'):
 
 
 
-main(dname, subdomains)
+main(dname, subdomains, ext)
 
-fh = open('./finals.txt', 'w+')
 print("[-] Writing to final.txt")
-for d in subdomains:
-    fh.write(d+"\n")
-
-fh.close()
+with open('./finals.txt', 'w+') as fh
+    for d in subdomains:
+        fh.write(d+"\n")
