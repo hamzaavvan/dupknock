@@ -4,8 +4,7 @@ import sys
 ext = 'txt'
 dname = sys.argv[1]
 
-if len(sys.argv) ==3: 
-    ext = sys.argv[2]
+if len(sys.argv) ==3: ext = sys.argv[2]
 
 subdomains=[]
 
