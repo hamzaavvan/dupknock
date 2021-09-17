@@ -1,12 +1,22 @@
 import os
 import sys
 
+if len(sys.argv)<=1:
+    print ("""
+Dupknock to easily knockout duplicate records from multiple files
+
+python dupknock.py dirname [txt]
+    """)
+    exit()
+
 ext = 'txt'
 dname = sys.argv[1]
+
 
 if len(sys.argv) ==3: ext = sys.argv[2]
 
 subdomains=[]
+files = []
 
 # List all subdirectories using scandir()
 def main(basepath, temp=[], ext='txt'):
@@ -23,6 +33,7 @@ def main(basepath, temp=[], ext='txt'):
                 if entry.name.split('.')[-1] not in exts: continue
 
                 temppath = temppath+'/'+entry.name
+                files.append( ".".join(str(name) for name in entry.name.split('.')[:-1]))
                 print("[+] Reading "+entry.name)
 
                 with open(temppath) as f:
@@ -38,6 +49,6 @@ def main(basepath, temp=[], ext='txt'):
 main(dname, subdomains, ext)
 
 print("[-] Writing to final.txt")
-with open('./finals.txt', 'w+') as fh:
+with open('{}/{}-finals.txt'.format(dname, "-".join(str(_file) for _file in files)), 'w+') as fh:
     for d in subdomains:
         fh.write(d+"\n")
